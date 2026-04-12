@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Code Master Academy</title>
+ 
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f7fb;
+        }
+
+        /* Top Banner */
+        .marquee {
+            background: #0077ff;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Navbar */
+        .nav {
+            background: #0d1b2a;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            color: #00b4d8;
+        }
+
+        /* Container */
+        .container {
+            padding: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Section Card */
+        .section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            color: #0d1b2a;
+        }
+
+        /* Dashboard Cards */
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 200px;
+            background: #eef5ff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: #dbeafe;
+        }
+
+        /* Courses */
+        .course {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .course:hover {
+            background: #e0f2fe;
+        }
+
+        /* Compiler */
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        select, button {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+
+        button {
+            background: #0077ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005fcc;
+        }
+
+        #output {
+            background: black;
+            color: lime;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            min-height: 80px;
+        }
+
+        /* Progress */
+        progress {
+            width: 100%;
+            height: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0d1b2a;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<marquee style="background:rgb(22, 145, 202); padding:10px; font-weight:bold;">
+    🚀 Welcome! Learn Coding | Practice Daily | Build Projects | Become Pro Developer 🚀
+</marquee>
+
+<img src="sam.jpeg" alt="Logo" style="width:250px; display:block; margin:auto;">
+<div class="header">
+    <h2>🎓 CODE MASTER ACADEMY</h2>
+</div>
+
+<div class="nav">
+    <a href="#dashboard">Dashboard</a>
+    <a href="#courses">Courses</a>
+    <a href="#compiler">Compiler</a>
+    <a href="#progress">Progress</a>
+    <a href="#playlist">Video Playlist</a>
+</div>
+
+<div class="container">
+<!-- Dashboard -->
+    <div class="section"id="dashboard">
+        <h2>📊 Dashboard</h2>
+
+        <div class="cards">
+            <div class="card">Total Courses <br><b>5</b></div>
+            <div class="card">Completed <br><b>2</b></div>
+            <div class="card">In Progress <br><b>3</b></div>
+        </div>
+    </div>
+
+    <!-- Courses -->
+    <div class="section"id="courses">
+        <h2>📚 Courses</h2>
+
+        <div class="course">🌐 HTML & CSS - Basics of Web</div>
+        <div class="course">⚡ JavaScript - Interactivity</div>
+        <div class="course">💻 C++ - Logic Building</div>
+    </div>
+
+    
+    <!-- Compiler -->
+    <div class="section"id="compiler">
+        <!-- COMPILER SECTION -->
+
+    <h2>💻 Multi-Language Compiler</h2>
+
+    <!-- Language Select -->
+    <label><b>Select Language:</b></label><br>
+
+    <select>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>C</option>
+        <option>C++</option>
+        <option>Java</option>
+    </select>
+
+    <br><br>
+
+    <!-- Code Editor -->
+    <textarea rows="8" style="width:100%; padding:10px; border-radius:8px;">
+print("Hello World")
+    </textarea>
+
+    <br><br>
+
+    <!-- Run Button -->
+    <button style="padding:10px 15px; background:#0077ff; color:white; border:none; border-radius:6px;">
+        ▶ Run Code
+    </button>
+
+    <br><br>
+
+    <!-- Output Box -->
+    <h3>Output:</h3>
+
+    <div style="
+        background:black;
+        color:lime;
+        padding:10px;
+        border-radius:8px;
+        min-height:80px;
+        font-family:monospace;
+    ">
+        Hello World
+    </div>
+
+</div>
+    </div>
+
+    <!-- Progress -->
+    <div class="section" id="progress">
+        <h2>📈 Progress</h2>
+
+        <p>HTML</p>
+        <progress value="80" max="100"></progress>
+
+        <p>JavaScript</p>
+        <progress value="60" max="100"></progress>
+
+        <p>C++</p>
+        <progress value="40" max="100"></progress>
+    </div>
+
+</div>
+ <!-- Video -->
+    <div class="section"id="playlist">
+       <!-- VIDEO SECTION -->
+<div id="video">
+
+    <h2>🎥 Learning Videos</h2>
+
+    <table width="100%" cellpadding="10">
+
+        <tr>
+
+            <!-- VIDEO PLAYER -->
+            <td width="70%" valign="top">
+
+                <iframe name="player" width="100%" height="350"
+                src="https://www.youtube.com/embed/1Rs2ND1ryYc"
+                allowfullscreen>
+                </iframe>
+
+                <h3>Video Player</h3>
+
+            </td>
+
+            <!-- PLAYLIST -->
+            <td width="30%" valign="top" bgcolor="#f1f5f9">
+
+                <h3>📚 Playlist</h3>
+
+                <p>
+                    <a href="https://www.youtube.com/embed/1Rs2ND1ryYc" target="player">
+                        ▶ HTML Introduction
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://www.youtube.com/embed/yfoY53QXEnI" target="player">
+                        ▶ CSS Basics
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://www.youtube.com/embed/dD2EISBDjWM" target="player">
+                        ▶ JavaScript Basics
+                    </a>
+                </p>
+
+                <p>
+                    <a href="https://www.youtube.com/embed/ZvbzSrg0afE" target="player">
+                        ▶ C++ Introduction
+                    </a>
+                </p>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+</div>
+    </div>
+
+<div class="footer">
+© 2026 Code Master Academy
+</div>
+
+<script>
+function runCode() {
+    let code = document.getElementById("code").value;
+    let output = document.getElementById("output");
+
+    try {
+        let logs = [];
+        console.log = (msg) => logs.push(msg);
+        new Function(code)();
+        output.innerText = logs.join("\n");
+    } catch (e) {
+        output.innerText = e;
+    }
+}
+</script>
+
+</body>
+</html>
