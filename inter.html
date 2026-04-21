@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Master Academy</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* Top Banner */
+.marquee {
+    background: linear-gradient(90deg, #0077ff, #00b4d8);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Header */
+.header {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+/* Navbar */
+.nav {
+    background: #0d1b2a;
+    padding: 14px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #00b4d8;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* Container */
+.container {
+    padding: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Section */
+.section {
+    background: white;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.section:hover {
+    transform: translateY(-3px);
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+    background: linear-gradient(135deg, #dbeafe, #eef5ff);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Courses */
+.course {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.course:hover {
+    background: #e0f2fe;
+    transform: translateX(5px);
+}
+
+/* Compiler */
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: monospace;
+    background: #0d1b2a;
+    color: #00ff9c;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+    background: linear-gradient(90deg, #0077ff, #00b4d8);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Output */
+#output {
+    background: black;
+    color: #00ff9c;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    min-height: 80px;
+    font-family: monospace;
+}
+
+/* Progress */
+progress {
+    width: 100%;
+    height: 18px;
+}
+
+/* Footer */
+.footer {
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<marquee style="background:rgb(22, 145, 202); padding:10px; font-weight:bold;">
+    🚀 Welcome! Learn Coding | Practice Daily | Build Projects | Become Pro Developer 🚀
+</marquee>
+
+<div class="header">
+<h2>🎓 CODE MASTER ACADEMY</h2>
+</div>
+
+<div class="nav">
+<a href="#dashboard">Dashboard</a>
+<a href="#courses">Courses</a>
+<a href="#compiler">Compiler</a>
+<a href="#progress">Progress</a>
+<a href="#playlist">Videos</a>
+</div>
+
+<div class="container">
+
+<!-- Dashboard -->
+<div class="section" id="dashboard">
+<h2>📊 Dashboard</h2>
+<div class="cards">
+<div class="card">Total Courses<br><b>5</b></div>
+<div class="card">Completed<br><b>2</b></div>
+<div class="card">In Progress<br><b>3</b></div>
+</div>
+</div>
+
+<!-- Courses -->
+<div class="section" id="courses">
+<h2>📚 Courses</h2>
+<div class="course">🌐 HTML & CSS</div>
+<div class="course">⚡ JavaScript</div>
+<div class="course">💻 C++</div>
+</div>
+
+<!-- Compiler -->
+<div class="section" id="compiler">
+<h2>💻 JavaScript Compiler</h2>
+
+<textarea id="code" rows="8">
+console.log("Hello World");
+</textarea>
+
+<button onclick="runCode()">▶ Run Code</button>
+
+<h3>Output:</h3>
+<div id="output"></div>
+</div>
+
+<!-- Progress -->
+<div class="section" id="progress">
+<h2>📈 Progress</h2>
+
+<p>HTML</p>
+<progress value="80" max="100"></progress>
+
+<p>JavaScript</p>
+<progress value="60" max="100"></progress>
+
+<p>C++</p>
+<progress value="40" max="100"></progress>
+</div>
+
+<!-- Videos -->
+<div class="section" id="playlist">
+<h2>🎥 Learning Videos</h2>
+
+<iframe name="player" width="100%" height="350"
+src="https://www.youtube.com/embed/1Rs2ND1ryYc"></iframe>
+
+<p><a href="https://www.youtube.com/embed/1Rs2ND1ryYc" target="player">▶ HTML</a></p>
+<p><a href="https://www.youtube.com/embed/yfoY53QXEnI" target="player">▶ CSS</a></p>
+<p><a href="https://www.youtube.com/embed/dD2EISBDjWM" target="player">▶ JS</a></p>
+</div>
+
+</div>
+
+<div class="footer">
+© 2026 Code Master Academy
+</div>
+
+<script>
+function runCode() {
+    let code = document.getElementById("code").value;
+    let output = document.getElementById("output");
+
+    try {
+        let logs = [];
+        const originalLog = console.log;
+
+        console.log = function (...args) {
+            logs.push(args.join(" "));
+        };
+
+        new Function(code)();
+
+        console.log = originalLog;
+
+        output.innerText = logs.join("\n") || "Code executed!";
+    } catch (e) {
+        output.innerText = e;
+    }
+}
+</script>
+
+</body>
+</html>
