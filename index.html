@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Master Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <h2><i class="fas fa-code"></i> Web Development</h2>
+</head>
+<body>
+
+<header>
+    <h1>Code Master Academy</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Become a Coding Expert</h2>
+    <p>Learn Web Dev, Python, AI & more</p>
+    <a href="courses.html" class="btn">Explore Courses</a>
+</section>
+
+<footer>
+    <p>© 2026 Code Master Academy</p>
+</footer>
+<section class="container">
+    <div class="card">
+        <h2>🎯 Practical Learning</h2>
+        <p>Work on real-world projects instead of boring theory.</p>
+    </div>
+
+    <div class="card">
+        <h2>👨‍🏫 Expert Mentors</h2>
+        <p>Learn from experienced developers and industry experts.</p>
+    </div>
+
+    <div class="card">
+        <h2>💼 Career Support</h2>
+        <p>Get guidance for jobs, freelancing, and interviews.</p>
+    </div>
+</section>
+
+<section class="hero">
+    <div class="slider">
+        <div class="slide active"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div>
+
+    <div class="hero-content">
+        <h2>Become a Coding Expert</h2>
+        <p>Learn Web Development, Python & AI</p>
+        <a href="courses.html" class="btn">Explore Courses</a>
+    </div>
+</section>
+<h2>📤 Upload Lecture / Notes</h2>
+
+<input type="text" id="title" placeholder="Lecture Title"><br><br>
+
+<input type="file" id="file"><br><br>
+
+<button onclick="uploadFile()">Upload</button>
+
+<script>
+function uploadFile() {
+    let file = document.getElementById("file").files[0];
+    let title = document.getElementById("title").value;
+
+    let storageRef = firebase.storage().ref("uploads/" + file.name);
+
+    storageRef.put(file).then(() => {
+        storageRef.getDownloadURL().then((url) => {
+            firebase.firestore().collection("lectures").add({
+                title: title,
+                url: url
+            });
+
+            alert("Uploaded Successfully!");
+        });
+    });
+}
+</script>
+<h2>📚 Lectures</h2>
+
+<div id="list"></div>
+
+<script>
+firebase.firestore().collection("lectures").get().then((snap) => {
+    snap.forEach((doc) => {
+        let data = doc.data();
+
+        document.getElementById("list").innerHTML += `
+            <div class="card">
+                <h3>${data.title}</h3>
+                <a href="${data.url}" target="_blank">Open Lecture</a>
+            </div>
+        `;
+    });
+});
+</script>
+</body>
+</html>
